@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Fruit from './Fruit.js'
+import Airbnb from './airbnb.js'
 
 class App extends Component {
   
@@ -9,9 +9,12 @@ class App extends Component {
       super(props);
       this.state = {
         items: [
-          {name: "Apple", color: "red", rice: "1 dollar"},
-          {name: "Apple", color: "green", rice: "2 dollars"},
-          {name: "Apple", color: "yellow", rice: "2 dollars"}
+          {name: "New Hampshire Woodland Cabin", descr: "2-bedroom woodland cabin for family loving nature and seek isolation from COVID", 
+          price: "$100/night", rating: "5/5"},
+          {name: "Central NYC Apartment", descr: "Studio style one-person apartment with large bedroom, kitchen, and a big window for New york skyline!", 
+          price: "$98/night", rating: "4/5"},
+          {name: "Graduate Center B luxury student suite", descr: "Great location for isolation, exquisite Ratty cuisine, and soviet style architectural style.", 
+          price: "$38/night", rating: "4.5/5"}
         ]
       };
     }
@@ -19,8 +22,7 @@ class App extends Component {
       return (
         <div className="main">
           {this.state.items.map(
-            (fruit) => <Fruit name={fruit.name} color={fruit.color} price={fruit.price}></Fruit>
-      )}
+            (airbnb) => <Airbnb name={airbnb.name} descr={airbnb.descr} price={airbnb.price} rating={airbnb.rating}></Airbnb>)}
         </div>
       )
     }
